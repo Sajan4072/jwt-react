@@ -87,7 +87,36 @@ http://mypy-lang.org/index.html
 rotate refresh token and blacklist after rotation 
 
 8..
+customizing token claims 
+ the jwt token when decoded is 
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjUyMTgxMzExLCJpYXQiOjE2NTIxODEwMTEsImp0aSI6IjRkNWEzNTBjOWI0YzQ4YzliMTNiZGEyZWU2Y2IxZTg5IiwidXNlcl9pZCI6MX0.fvTpDH7sShXeMOSO1Z9B8w3STaNQUtEVSXbfZBdX5OE
+HEADER:ALGORITHM & TOKEN TYPE
 
+{
+  "typ": "JWT",
+  "alg": "HS256"
+}
+PAYLOAD:DATA
+
+{
+  "token_type": "access",
+  "exp": 1652181311,
+  "iat": 1652181011,
+  "jti": "4d5a350c9b4c48c9b13bda2ee6cb1e89",
+  "user_id": 1
+}
+VERIFY SIGNATURE
+
+HMACSHA256(
+  base64UrlEncode(header) + "." +
+  base64UrlEncode(payload),
+  
+your-256-bit-secret
+
+) secret base64 encoded
+
+
+here we can customize the reponse like user_name etc
 
 9..
 
