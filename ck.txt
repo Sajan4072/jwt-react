@@ -118,7 +118,39 @@ your-256-bit-secret
 
 here we can customize the reponse like user_name etc
 
+
+
+
 9..
+CORS configuration and why it is needed
+i.e cross origin resource sharing
+
+cuz, as we ll have our react proj running from different folder and another port 3000 and django will run on 8000
+
+allowing
+
+CORS_ALLOWED_ORIGINS = [
+    "https://example.com",
+    "https://sub.example.com",
+    "http://localhost:8080",
+    "http://127.0.0.1:9000",
+] 
+
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r"^https://\w+\.example\.com$",
+]
+
+CORS_ALLOW_METHODS = [
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+]
+
+
+etc etc  look at documentation
 
 
 10..
