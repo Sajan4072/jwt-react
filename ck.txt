@@ -154,10 +154,14 @@ etc etc  look at documentation
 
 
 10..
+node -v
+
 
 
 11..
+npx create-react-app appname
 
+packages react,react-dom,react-scripts with cra-template
 
 12..
 
